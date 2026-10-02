@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000). The SQLite database and ses
 
 ## Install as an app
 
-CampusRide includes a web app manifest, install icons, and a service worker. The service worker is registered in production builds and provides an offline page when a navigation cannot reach the server. Sign-in, ride data, and API actions still require a network connection and are never cached. Deploy over HTTPS (or use `localhost`) to enable browser installation.
+CampusRide includes a web app manifest, install icons, a service worker, and an in-app install control. The service worker is registered in production builds and provides an offline page when a navigation cannot reach the server. Sign-in, ride data, and API actions still require a network connection and are never cached. Deploy over HTTPS (or use `localhost`) to enable browser installation. On iPhone, open the site in Safari and use Share → Add to Home Screen.
 
 ## Demo accounts
 
