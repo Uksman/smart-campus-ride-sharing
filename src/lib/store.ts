@@ -16,8 +16,10 @@ export class ApiFailure extends Error {
 }
 
 const ROOT = process.cwd();
-const DATA_DIR = path.dirname(process.env.CAMPUS_RIDES_DB || path.join(ROOT, ".data", "campusride.sqlite"));
-const DB_FILE = process.env.CAMPUS_RIDES_DB || path.join(ROOT, ".data", "campusride.sqlite");
+const IS_SERVERLESS = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DEFAULT_DATA_DIR = IS_SERVERLESS ? "/tmp" : path.join(ROOT, ".data");
+const DB_FILE = process.env.CAMPUS_RIDES_DB || path.join(DEFAULT_DATA_DIR, "campusride.sqlite");
+const DATA_DIR = path.dirname(DB_FILE);
 const SECRET_FILE = path.join(DATA_DIR, "session.secret");
 const COOKIE_NAME = "campus_session";
 const TOKEN_TTL = 60 * 60 * 24 * 7;

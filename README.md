@@ -13,6 +13,10 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000). The SQLite database and session secret are created in `.data/` on first start. Set `CAMPUS_RIDES_DB` to choose another SQLite file and `CAMPUS_RIDES_SECRET` to provide a stable signing key in a managed deployment.
 
+## Install as an app
+
+CampusRide includes a web app manifest, install icons, and a service worker. The service worker is registered in production builds and provides an offline page when a navigation cannot reach the server. Sign-in, ride data, and API actions still require a network connection and are never cached. Deploy over HTTPS (or use `localhost`) to enable browser installation.
+
 ## Demo accounts
 
 All demo accounts use `CampusRide!23`:
